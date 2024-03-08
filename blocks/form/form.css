@@ -1,0 +1,435 @@
+:root {
+    --background-color-primary: #fff;
+    --label-color: #666;
+    --border-color: #818a91;
+    --button-primary-color: #5F8DDA;
+    --button-primary-hover-color: #035fe6;
+    --form-font-size-m: 22px;
+    --form-font-size-s: 18px;
+    --form-font-size-xs: 16px;
+    --form-background-color: var(--background-color-primary);
+    --form-padding: 3%;
+    --form-columns: 1;
+    --form-field-horz-gap: 40px;
+    --form-field-vert-gap: 20px;
+    --form-invalid-border-color: #ff5f3f;
+    --form-input-padding: 0.75rem 0.6rem;
+    --form-input-font-size: 1rem;
+    --form-input-disable-color: var(--label-color);
+    --form-input-border-size: 1px;
+    --form-input-border-color: var(--border-color);
+    --form-input-background-color: var(--background-color-primary);
+    --form-paragraph-color: var(--label-color);
+    --form-paragraph-margin: 0 0 0.9rem;
+    --form-paragraph-font-style: none;
+    --form-paragraph-font-size: var(--form-font-size-s);
+    --form-label-color: var(--label-color);
+    --form-label-font-size: var(--form-font-size-s);
+    --form-label-font-weight: 400;
+    --form-title-font-weight: 600;
+    --form-fieldset-border: 0;
+    --form-fieldset-marign: 0;
+    --form-fieldset-legend-color: var(--form-label-color);
+    --form-fieldset-legend-font-size: var(--form-label-font-size);
+    --form-fieldset-legend-font-weight: var(--form-title-font-weight);
+    --form-fieldset-legend-border: none;
+    --form-fieldset-legend-padding: 0;
+    --form-button-color: var(--background-color-primary);
+    --form-button-font-size: var(--form-font-size-s);
+    --form-button-background-color: var(--button-primary-color);
+    --form-button-background-hover-color: var(--button-primary-hover-color);
+    --form-button-border: 2px solid transparent;
+    --form-button-padding:15px 50px;
+    --form-upload-color: var(--background-color-primary);
+    --form-upload-font-size: var(--form-font-size-xs);
+    --form-upload-background-color: var(--mt-global-color-base-primary);
+    --form-submit-width: 100%;
+    --form-width: 100%;
+}
+
+form output {
+    display: block;
+    font-weight: 700;
+    font-size: 1.625rem;
+}
+
+form [data-visible="false"] {
+    display: none !important;
+}
+
+main .form-container {
+    background-color: var(--mt-background-color-primary);
+    padding: var(--form-padding);
+    width: var(--form-width);
+    margin: var(--nav-height) auto;
+}
+
+main .form {
+    background-color: var(--form-background-color);
+}
+
+main .form > div:not(:first-child) {
+    display: none;
+}
+
+main .form form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--form-field-vert-gap) var(--form-field-horz-gap);
+    align-items: start;
+}
+
+main .form form fieldset {
+    border: var(--form-fieldset-border);
+    margin: var(--form-fieldset-marign);
+    width: 100%;
+}
+
+main .form form fieldset fieldset {
+    padding: 0;
+}
+
+main .form .field-description {
+    color: var(--form-label-color);
+    font-size: var(--form-font-size-xs);
+}
+
+main .form input, main .form textarea, main .form select {
+    background-color: var(--form-input-background-color);
+    border: var(--form-input-border-size) solid var(--form-input-border-color);
+    width: 100%;
+    height: 42px;
+    color: var(--form-label-color);
+    padding: var(--form-input-padding);
+    font-size: var(--form-input-font-size);
+    max-width: unset;
+}
+
+main .form input[type='file'] {
+    border: none;
+    padding-inline-start:0;
+}
+
+main .form input[type='checkbox'],
+main .form input[type='radio'] {
+    width: 16px;
+    height: 16px;
+    flex: none;
+    margin: 0;
+}
+
+main .form textarea {
+    min-height: 100px;
+}
+
+main .form input:hover, main .form select:hover {
+    border-color: rgb(90 92 96);
+}
+
+main .form fieldset legend {
+    font-weight: var(--form-fieldset-legend-font-weight);
+    font-size: var(--form-fieldset-legend-font-size);
+    color: var(--form-fieldset-legend-color);
+    border-bottom: var(--form-fieldset-legend-border);
+    width: 100%;
+    padding: var(--form-fieldset-legend-padding);
+    margin-bottom: 10px;
+}
+
+main .innovate form > fieldset > legend {
+    text-align: center;
+}
+
+main .form label {
+    font-weight: var(--form-label-font-weight);
+    font-size: var(--form-label-font-size);
+    color: var(--form-label-color);
+}
+
+main .form label.required::after {
+    content: "*";
+    color: var(--form-label-color);
+    padding-inline-start: 5px;
+}
+
+main .form form p,
+main .form form .field-wrapper {
+    margin: var(--form-field-gap);
+    color: var(--form-label-color);
+    flex: 1 0 calc(100%/var(--form-columns) - var(--form-field-horz-gap));
+}
+
+main .form form p {
+    font-size: var(--form-paragraph-font-size);
+    font-style: var(--form-paragraph-font-style);
+    color: var(--form-paragraph-color);
+    margin: var(--form-paragraph-margin);
+}
+
+main .form form .form-checkbox-wrapper, main .form form .form-radio-wrapper {
+    display: flex;
+    align-items: baseline;
+    margin: 0;
+    gap: 8px;
+}
+
+main .form form fieldset > .form-radio-wrapper:first-of-type,
+main .form form fieldset > .form-checkbox-wrapper:first-of-type {
+    margin: var(--form-field-gap);
+}
+
+main .form .form-radio-wrapper  label,
+main .form .form-checkbox-wrapper label {
+    font-weight: var(--mt-font-weight-regular);
+    flex-basis: calc(100% - 28px);
+}
+
+input::file-selector-button {
+    color: var(--form-upload-color);
+    background: var(--form-upload-background-color);
+    font-size: var(--form-upload-font-size);
+    text-align: center;
+}
+
+main .form button {
+    color: var(--form-button-color);
+    background: var(--form-button-background-color);
+    border: var(--form-button-border);
+    padding: var(--form-button-padding);
+    font-size: var(--form-button-font-size);
+    font-weight: var(--mt-font-weight-bold);
+    border-radius: unset;
+    width: 100%;
+}
+
+main .form button:hover {
+    background: var(--form-button-background-hover-color);
+}
+
+main .form-submit-wrapper{
+    width: var(--form-submit-width);
+}
+
+main .form input:disabled,
+main .form textarea:disabled,
+main .form select:disabled,
+main .form button:disabled {
+    background-color: var(--form-input-disable-color);
+}
+
+main .form-file-wrapper input[type="file"] {
+    display: none;
+}
+
+main .form-file-wrapper .field-dropregion {
+    background: rgb(0 0 0 / 2%);
+    border: 1px dashed var(--mt-global-color-silver);
+    border-radius: 4px;
+    margin: 11px 0 8px;
+    padding: 32px;
+    text-align: center;
+}
+
+main .form-file-wrapper .file-description button {
+    --form-button-padding: 15px;
+
+    background: url('/icons/delete.svg') no-repeat;
+    width: unset;
+    border: unset;
+    text-align: center;
+}
+
+main .wizard form {
+    counter-reset: wizard-step-counter;
+}
+
+main .wizard form > fieldset {
+    counter-increment: wizard-step-counter;
+}
+
+main .wizard form > :not(.current-wizard-step) {
+    display: none;
+}
+
+main .wizard form > .current-wizard-step > legend {
+    font-weight: 600;
+}
+
+main .wizard form .form-wizard-button-wrapper {
+    grid-column: 1/-1;
+    padding-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    position: relative;
+}
+
+main .wizard form .form-wizard-button-wrapper button {
+    border: 3px solid var(--clr-secondary);
+    background-color: transparent;
+    color: var(--clr-secondary);
+    text-align: center;
+    min-width: 200px;
+    max-width: 275px;
+    height: 60px;
+}
+
+main .wizard form .form-submit-wrapper,
+main .wizard form .form-wizard-button-skip,
+main .ccpa-wrapper .wizard form > .current-wizard-step.form-fieldset-wrapper ~ .form-wizard-button-wrapper > .form-wizard-button-prev,
+main .wizard form > .current-wizard-step.form-fieldset-wrapper:first-of-type ~ .form-wizard-button-wrapper > .form-wizard-button-prev,
+main .wizard form > .current-wizard-step.form-fieldset-wrapper:last-of-type ~ .form-wizard-button-wrapper > .form-wizard-button-next {
+    display: none;
+}
+
+main .wizard form .current-wizard-step.field-wrapper:last-of-type ~ .form-wizard-button-wrapper > .form-submit-wrapper {
+    display: inline-block;
+}
+
+@media (min-width: 576px) {
+    :root {
+        --form-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    :root {
+        --form-width: 740px;
+    }
+
+    main .form button {
+        width: unset;
+    }
+}
+
+@media(min-width: 992px) {
+    main .wizard.left {
+        --wizard-left-titlebar-width: 400px;
+        --wizard-left-form-padding: 30px;
+        --wizard-left-titlebar-padding: var(--wizard-left-form-padding);
+        --wizard-left-form-padding-bottom: 160px;
+        --form-columns: 1;
+        --fieldset-coulmns: 1;
+    }
+
+    main .wizard.left form {
+        display: grid;
+        grid-template-columns: repeat(var(--form-columns), minmax(0, 1fr));
+        border: 2px solid var(--clr-gray-dark);
+        background-color: var(--clr-gray);
+        gap: unset;
+    }
+
+    /* wizard title on left */
+    main .wizard.left form .current-wizard-step {
+        display: grid;
+        grid-template-columns: repeat(var( --fieldset-coulmns), minmax(0, 1fr));
+        border-left: 2px solid var(--clr-gray-dark);
+        margin-left: var(--wizard-left-titlebar-width);
+        background-color: var(--clr-white);
+        max-width: 1135px;
+        min-width: 540px;
+        padding: var(--wizard-left-form-padding);
+        padding-bottom: var(--wizard-left-form-padding-bottom);
+    }
+
+    main .wizard.left form > fieldset {
+        width: unset;
+    }
+
+    main .wizard.left form > fieldset:not(.current-wizard-step) {
+        position: absolute;
+        display: unset;
+    }
+
+    main .wizard.left form > fieldset:not(.current-wizard-step) > :not(legend) {
+        display: none;
+    }
+
+    main .wizard.left form > fieldset > legend::before {
+        content: counter(wizard-step-counter);
+        display: inline-block;
+        border: 2px solid var(--clr-blue);
+        color: var(--clr-blue);
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        margin-right: 0.75rem;
+        text-align: center;
+        padding-top: 5px;
+    }
+
+    main .wizard.left form > fieldset > legend {
+        position: absolute;
+        font-size: 1.5rem;
+        margin-top: calc(var(--wizard-step-index) * 110px);
+        width: var(--wizard-left-titlebar-width);
+        padding: var(--wizard-left-titlebar-padding) var(--wizard-left-titlebar-padding) 0;
+        line-height: 1;
+        margin-bottom: 0;
+    }
+
+    main .wizard.left form > .current-wizard-step > legend {
+        margin-left: calc(-1*var(--wizard-left-titlebar-width) - var(--wizard-left-form-padding));
+        margin-top: calc((var(--wizard-step-index) * 110px) - var(--wizard-left-titlebar-padding));
+    }
+
+    main .wizard.left form > .current-wizard-step > legend::before {
+        background-color: var(--clr-blue);
+        color: var(--clr-white);
+    }
+
+    main .wizard.left form .form-wizard-button-wrapper {
+        margin-top: -160px;
+        margin-left:  var(--wizard-left-titlebar-width);
+        padding: 40px 60px 0;
+        grid-gap: 0 30px;
+    }
+
+    /* claim custom styling need formcontainer with only padding*/
+    main .claim.form-container {
+        --form-width: 100%;
+        padding: 0 min(calc((100% - 952px)/2), 6rem);
+    }
+
+    main .claim.form-container > div {
+        max-width: unset;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root {
+        --form-width: 990px;
+    }
+
+    main .wizard.left {
+        --fieldset-coulmns: 2;
+    }
+}
+
+main form .form-fieldset-wrapper {
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+}
+
+/* main form .form-fieldset-wrapper > .field-wrapper{
+    flex: 1 0 auto;
+} */
+
+@media (min-width: 1200px), (min-width: 992px) {
+    :root {
+        --form-columns: 2;
+    }
+
+    main .form form .form-checkbox-wrapper,
+    main .form form .form-textarea-wrapper,
+    main .form form .form-file-wrapper,
+    main .form form .form-fieldset-wrapper {
+        flex: 1 0 100%;
+    }
+
+    main .form form .form-fieldset-wrapper {
+        flex-flow: row wrap;
+        gap: 10px 15px;
+    }
+}

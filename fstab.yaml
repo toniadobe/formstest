@@ -1,5 +1,2 @@
 mountpoints:
-  /:
-    url: https://author-p96606-e882934.adobeaemcloud.com/
-    type: "markup"
-    suffix: ".md.html"
+  /: https://drive.google.com/drive/folders/1dUqLAVV8UMYvhffiRsfrFzj_nhcfTcbq?usp=drive_link
