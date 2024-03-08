@@ -2,8 +2,8 @@
 Your project's description...
 
 ## Environments
-- Preview: https://main--formtest--toniadobe.hlx.page/
-- Live: https://main--formtest--toniadobe.hlx.live/
+- Preview: https://main--formstest--toniadobe.hlx.page/
+- Live: https://main--formstest--toniadobe.hlx.live/
 
 ## Installation
 
